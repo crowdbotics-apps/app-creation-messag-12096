@@ -31,7 +31,7 @@ export class __Blank extends React.Component {
           fontStyle: "normal"
         }}
         style={this.props.themedStyle.Button_3}
-        onPress={() => this.props.navigation.navigate("BlankScreen311461")}
+        onPress={() => alert("Pressed!")}
       >
         Press me!
       </Button>
