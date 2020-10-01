@@ -19,7 +19,7 @@ export class __Blank extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
-  state = {}
+  state = { Datepicker_7: new Date("10/01/2020") }
   render = () => (
     <View style={this.props.themedStyle.View_1}>
       <Button
@@ -35,6 +35,12 @@ export class __Blank extends React.Component {
       >
         Press me!
       </Button>
+      <Text style={this.props.themedStyle.Text_5}>Sample text content</Text>
+      <Datepicker
+        style={this.props.themedStyle.Datepicker_7}
+        date={this.state.Datepicker_7}
+        onSelect={nextValue => this.setState({ Datepicker_7: nextValue })}
+      />
     </View>
   )
 }
@@ -100,11 +106,72 @@ _Blank = withStyles(__Blank, theme => ({
     textTransform: "none",
     lineHeight: 12,
     letterSpacing: 0
+  },
+  Text_5: {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 5,
+    marginBottom: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 5,
+    paddingBottom: 5,
+    overflow: "visible",
+    fontSize: 12,
+    color: "#000000",
+    backgroundColor: "#ffffff",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    borderColor: "#000000",
+    borderStyle: "solid",
+    borderWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
+    borderRadius: 0,
+    textAlign: "left",
+    textAlignVertical: "center",
+    textDecorationLine: "none",
+    textTransform: "none",
+    lineHeight: 12,
+    letterSpacing: 0
+  },
+  Datepicker_7: {
+    width: "100%",
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 5,
+    marginBottom: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 5,
+    paddingBottom: 5,
+    overflow: "visible",
+    fontSize: 12,
+    color: "#000000",
+    backgroundColor: "#ffffff",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    borderColor: "#000000",
+    borderStyle: "solid",
+    borderWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
+    borderRadius: 0,
+    textAlign: "left",
+    textAlignVertical: "center",
+    textDecorationLine: "none",
+    textTransform: "none",
+    lineHeight: 12,
+    letterSpacing: 0
   }
 }))
 
 function mapStateToProps(state) {
-  return { state: state }
+  return { state: state.apiReducer }
 }
 const actionCreators = {}
 export default connect(mapStateToProps, actionCreators)(_Blank)
